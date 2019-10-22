@@ -68,7 +68,7 @@ class SiteController extends Controller
         $dataProvider->sort = [
             'defaultOrder' => ['created_at' => SORT_DESC]
         ];
-        $articles= Article::findAll([2,3,4]);
+        $articles= Article::find()->limit(10)->orderby(['created_at'=>SORT_DESC])->all();
         $tags = Tag::find()->limit(20)->all();
         $categories = ArticleCategory::find()->all();
         $this->view->params['categories'] = $categories;
@@ -101,7 +101,7 @@ class SiteController extends Controller
             ]);
         }
 
-        return $this->render('contact', [
+        return $this->renderPartial('contact', [
             'model' => $model
         ]);
     }

@@ -15,16 +15,9 @@ $this->title = 'Редактировать профиль'
 
     <?php $form = ActiveForm::begin() ?>
 
-    <?php echo $form->field($test, 'thumbnail')->widget(\trntv\filekit\widget\Upload::class, [
+    <?php echo $form->field($model, 'picture')->widget(\trntv\filekit\widget\Upload::class, [
         'url'=>['avatar-upload']
     ]) ?>
-    <?php echo $form->field($model, 'picture')->widget(\trntv\filekit\widget\Upload::class, [
-        'url'=>['/file/storage/upload']
-    ]) ?>
-
-
-
-    <?php echo $form->field($test, 'thumbnail_path')->textInput(['maxlength' => 255]) ?>
 
     <?php echo $form->field($model, 'firstname')->textInput(['maxlength' => 255]) ?>
 

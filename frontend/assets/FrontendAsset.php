@@ -54,6 +54,7 @@ class FrontendAsset extends AssetBundle
         'js/jquery.stellar.min.js',
         'js/main.js',
         'js/parralax123.js',
+        'js/yandex_metrika.js'
     ];
 
     /**

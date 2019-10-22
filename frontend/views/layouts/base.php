@@ -13,9 +13,8 @@ $this->beginContent('@frontend/views/layouts/_clear.php')
         <div class="container">
             <div class="row">
                 <div class="col-12 fh5co_mediya_center"><a href="#" class="color_fff fh5co_mediya_setting"><i
-                                class="fa fa-clock-o"></i>&nbsp;&nbsp;&nbsp;<?php setlocale(LC_ALL, 'ru_RU', 'ru_RU.UTF-8', 'ru', 'russian');
-                        echo strftime("%A,%e %b %Y", time());
-                        ?></a>
+                                class="fa fa-clock-o"></i>&nbsp;&nbsp;&nbsp;
+                        <?php echo dateru('д, j м Y'); ?></a>
                     <div class="d-inline-block fh5co_trading_posotion_relative"><a href="#" class="treding_btn">В тренде</a>
                         <div class="fh5co_treding_position_absolute"></div>
                     </div>

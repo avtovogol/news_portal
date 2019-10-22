@@ -51,13 +51,15 @@
     "trntv/sitemaped": "^0.1",
     "yii2mod/yii2-swagger": "^1.1",
     "kartik-v/yii2-widget-select2": "@dev"
+
   },
   "require-dev": {
     "yiisoft/yii2-debug": "^2.0.0",
     "yiisoft/yii2-gii": "^2.0.0",
     "yiisoft/yii2-faker": "^2.0.0",
     "codeception/codeception": "2.4.0",
-    "codeception/verify": "^0.3.1"
+    "codeception/verify": "^0.3.1",
+    "kartik-v/yii2-widget-typeahead": "*"
   },
   "autoload-dev": {
     "psr-4": {

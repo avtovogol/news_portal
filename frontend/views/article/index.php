@@ -11,6 +11,21 @@ use yii\widgets\LinkPager;
 $this->title = 'Статьи'
 ?>
 
+<?php
+//// Typeahead usage with ActiveForm and model
+//echo kartik\typeahead\Typeahead::widget([
+//    'dataset' => [
+//        [
+//            'local' => $categories,
+//            'limit' => 10,
+//            'display'=>'title',
+//            'datumTokenizer' => "Bloodhound.tokenizers.obj.whitespace('title')",
+//        ]
+//    ],
+//    'pluginOptions' => ['highlight' => true],
+//    'options' => ['placeholder' => 'Filter as you type ...'],
+//]); ?>
+
 <div id="article-index">
     <div class="container-fluid bg-faded fh5co_padd_mediya padding_786">
         <div class="container padding_786">
@@ -38,19 +53,6 @@ $this->title = 'Статьи'
                                     echo \yii\helpers\Html::a($category->title,  ['/article/index', 'ArticleSearch[category_id]' => $category->id],['class'=>'dropdown-item']);
                                 }?>
                             </div>
-                            <!--                        </li>-->
-                            <!--                        <li class="nav-item dropdown">-->
-                            <!--                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton3" data-toggle="dropdown"-->
-                            <!--                               aria-haspopup="true" aria-expanded="false">Community<span class="sr-only">(current)</span></a>-->
-                            <!--                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">-->
-                            <!--                                <a class="dropdown-item" href="#">Action in</a>-->
-                            <!--                                <a class="dropdown-item" href="#">Another action</a>-->
-                            <!--                                <a class="dropdown-item" href="#">Something else here</a>-->
-                            <!--                            </div>-->
-                            <!--                        </li>-->
-                            <!--                        <li class="nav-item ">-->
-                            <!--                            <a class="nav-link" href="Contact_us.html">Contact <span class="sr-only">(current)</span></a>-->
-                            <!--                        </li>-->
                     </ul>
                 </div>
             </nav>
@@ -63,18 +65,6 @@ $this->title = 'Статьи'
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">
                                 <?php echo 'Статьи' ?>
-<!--                            <span class="glyphicon glyphicon-search" data-toggle="collapse" data-target="#search-form"></span>
-                            <div  id="search-form">
-                                <?php /*$form = ActiveForm::begin([
-                                    'method' => 'GET',
-                                    'options' => ['class' => 'form-inline']
-                                ]) */?>
-                                <div>
-                                    <?php /*echo $form->field($searchModel, 'title')->label(false)->error(false) */?>
-                                    <?php /*echo Html::submitButton('Search', ['class' => 'btn btn-default']) */?>
-                                </div>
-                                <?php /*ActiveForm::end() */?>
-                            </div>-->
                         </div>
                     </div>
                     <?php echo \yii\widgets\ListView::widget([

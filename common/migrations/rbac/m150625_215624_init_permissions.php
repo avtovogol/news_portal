@@ -1,7 +1,6 @@
 <?php
 
 use common\models\User;
-use common\rbac\Migration;
 
 class m150625_215624_init_permissions extends Migration
 {

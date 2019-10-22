@@ -43,7 +43,7 @@ $this->title = Yii::$app->name;
                     <div class="fh5co_suceefh5co_height_position_absolute"></div>
                     <div class="fh5co_suceefh5co_height_position_absolute_font">
                         <div class=""><a href="/article/<?= $articles[0]->slug ?>" class="color_fff"> <i
-                                        class="fa fa-clock-o"></i>&nbsp;<?php echo date("d-m-Y", ($articles[0]->published_at)); ?>
+                                        class="fa fa-clock-o"></i>&nbsp;<?php echo Yii::$app->formatter->asDate($articles[0]->created_at,"long"); ?>
                             </a></div>
                         <div class="">
                             <a href="/article/<?= $articles[0]->slug ?>" class="fh5co_good_font"> <?php echo $articles[0]->title; ?> </a>
@@ -59,7 +59,7 @@ $this->title = Yii::$app->name;
                             <div class="fh5co_suceefh5co_height_position_absolute"></div>
                             <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                                 <div class=""><a href="/article/<?= $articles[1]->slug ?>" class="color_fff"> <i
-                                                class="fa fa-clock-o"></i>&nbsp;<?php echo date("d-m-Y", ($articles[1]->published_at)); ?>
+                                                class="fa fa-clock-o"></i>&nbsp;<?php echo Yii::$app->formatter->asDate($articles[1]->created_at,"long"); ?>
                                     </a></div>
                                 <div class=""><a href="/article/<?= $articles[1]->slug ?>"
                                                  class="fh5co_good_font_2"> <?php echo $articles[1]->title; ?></a></div>
@@ -72,7 +72,7 @@ $this->title = Yii::$app->name;
                             <div class="fh5co_suceefh5co_height_position_absolute"></div>
                             <div class="fh5co_suceefh5co_height_position_absolute_font_2">
                                 <div class=""><a href="/article/<?= $articles[2]->slug ?>" class="color_fff"> <i
-                                                class="fa fa-clock-o"></i>&nbsp;<?php echo date("d-m-Y", ($articles[2]->published_at)); ?>
+                                                class="fa fa-clock-o"></i>&nbsp;<?php echo Yii::$app->formatter->asDate($articles[2]->created_at,"long"); ?>
                                     </a></div>
                                 <div class=""><a href="/article/<?= $articles[2]->slug ?>"
                                                  class="fh5co_good_font_2"> <?php echo $articles[2]->title; ?></a></div>
@@ -81,27 +81,27 @@ $this->title = Yii::$app->name;
                     </div>
                     <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
                         <div class="fh5co_suceefh5co_height_2"><img
-                                    src="<?= $articles[1]->thumbnail_base_url . $articles[1]->thumbnail_path ?>" alt="img"/>
+                                    src="<?= $articles[3]->thumbnail_base_url . $articles[3]->thumbnail_path ?>" alt="img"/>
                             <div class="fh5co_suceefh5co_height_position_absolute"></div>
                             <div class="fh5co_suceefh5co_height_position_absolute_font_2">
-                                <div class=""><a href="/article/<?= $articles[1]->slug ?>" class="color_fff"> <i
-                                                class="fa fa-clock-o"></i>&nbsp;<?php echo date("d-m-Y", ($articles[1]->published_at)); ?>
+                                <div class=""><a href="/article/<?= $articles[3]->slug ?>" class="color_fff"> <i
+                                                class="fa fa-clock-o"></i>&nbsp;<?php echo Yii::$app->formatter->asDate($articles[3]->created_at,"long"); ?>
                                     </a></div>
-                                <div class=""><a href="/article/<?= $articles[1]->slug ?>"
-                                                 class="fh5co_good_font_2"> <?php echo $articles[1]->title; ?></a></div>
+                                <div class=""><a href="/article/<?= $articles[3]->slug ?>"
+                                                 class="fh5co_good_font_2"> <?php echo $articles[3]->title; ?></a></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
                         <div class="fh5co_suceefh5co_height_2"><img
-                                    src="<?= $articles[1]->thumbnail_base_url . $articles[1]->thumbnail_path ?>" alt="img"/>
+                                    src="<?= $articles[4]->thumbnail_base_url . $articles[4]->thumbnail_path ?>" alt="img"/>
                             <div class="fh5co_suceefh5co_height_position_absolute"></div>
                             <div class="fh5co_suceefh5co_height_position_absolute_font_2">
-                                <div class=""><a href="/article/<?= $articles[1]->slug ?>" class="color_fff"> <i
-                                                class="fa fa-clock-o"></i>&nbsp;<?php echo date("d-m-Y", ($articles[1]->published_at)); ?>
+                                <div class=""><a href="/article/<?= $articles[4]->slug ?>" class="color_fff"> <i
+                                                class="fa fa-clock-o"></i>&nbsp;<?php echo Yii::$app->formatter->asDate($articles[4]->created_at,"long"); ?>
                                     </a></div>
-                                <div class=""><a href="/article/<?= $articles[1]->slug ?>"
-                                                 class="fh5co_good_font_2"> <?php echo $articles[1]->title; ?></a></div>
+                                <div class=""><a href="/article/<?= $articles[4]->slug ?>"
+                                                 class="fh5co_good_font_2"> <?php echo $articles[4]->title; ?></a></div>
                             </div>
                         </div>
                     </div>
@@ -117,22 +117,22 @@ $this->title = Yii::$app->name;
             <div class="owl-carousel owl-theme js" id="slider1">
                 <div class="item px-2">
                     <div class="fh5co_latest_trading_img_position_relative">
-                        <div class="fh5co_latest_trading_img"><img src="<?= $articles[1]->thumbnail_base_url . $articles[1]->thumbnail_path ?>" alt=""
+                        <div class="fh5co_latest_trading_img"><img src="<?= $articles[5]->thumbnail_base_url . $articles[5]->thumbnail_path ?>" alt=""
                                                                    class="fh5co_img_special_relative"/></div>
                         <div class="fh5co_latest_trading_img_position_absolute"></div>
                         <div class="fh5co_latest_trading_img_position_absolute_1">
-                            <a href="/article/<?= $articles[1]->slug ?>" class="text-white"><?php echo $articles[1]->title; ?> </a>
-                            <div class="fh5co_latest_trading_date_and_name_color"> Walter Johson - <?php echo date("d-m-Y", ($articles[1]->published_at)); ?></div>
+                            <a href="/article/<?= $articles[5]->slug ?>" class="text-white"><?php echo $articles[5]->title; ?> </a>
+                            <div class="fh5co_latest_trading_date_and_name_color"> Walter Johson - <?php echo date("d-m-Y", ($articles[5]->published_at)); ?></div>
                         </div>
                     </div>
                 </div>
                 <div class="item px-2">
                     <div class="fh5co_latest_trading_img_position_relative">
-                        <div class="fh5co_latest_trading_img"><img src="<?= $articles[1]->thumbnail_base_url . $articles[1]->thumbnail_path ?>" alt=""
+                        <div class="fh5co_latest_trading_img"><img src="<?= $articles[6]->thumbnail_base_url . $articles[6]->thumbnail_path ?>" alt=""
                                                                    class="fh5co_img_special_relative"/></div>
                         <div class="fh5co_latest_trading_img_position_absolute"></div>
                         <div class="fh5co_latest_trading_img_position_absolute_1">
-                            <a href="/article/<?= $articles[1]->slug ?>" class="text-white"> Here's a new way to take better photos for
+                            <a href="/article/<?= $articles[6]->slug ?>" class="text-white"> Here's a new way to take better photos for
                                 instagram </a>
                             <div class="fh5co_latest_trading_date_and_name_color"> Walter Johson - March 7,2017</div>
                         </div>
@@ -345,24 +345,12 @@ $this->title = Yii::$app->name;
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">
                             <?php echo 'Статьи' ?>
-                            <!--                            <span class="glyphicon glyphicon-search" data-toggle="collapse" data-target="#search-form"></span>
-                            <div  id="search-form">
-                                <?php /*$form = ActiveForm::begin([
-                                    'method' => 'GET',
-                                    'options' => ['class' => 'form-inline']
-                                ]) */?>
-                                <div>
-                                    <?php /*echo $form->field($searchModel, 'title')->label(false)->error(false) */?>
-                                    <?php /*echo Html::submitButton('Search', ['class' => 'btn btn-default']) */?>
-                                </div>
-                                <?php /*ActiveForm::end() */?>
-                            </div>-->
                         </div>
                     </div>
                     <?php echo \yii\widgets\ListView::widget([
                         'dataProvider' => $dataProvider,
                         'layout'=>"{summary}\n{items}",
-                        'itemView' => '\..\article\_item'
+                        'itemView' => '/article/_item'
                     ])?>
 
                 </div>

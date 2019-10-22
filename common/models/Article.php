@@ -37,6 +37,7 @@ use yii\helpers\Html;
  * @property User                $updater
  * @property ArticleCategory     $category
  * @property ArticleAttachment[] $articleAttachments
+ * @property string              $source_link
  */
 class Article extends ActiveRecord
 {
@@ -134,10 +135,10 @@ class Article extends ActiveRecord
             [['published_at'], 'filter', 'filter' => 'strtotime', 'skipOnEmpty' => true],
             [['category_id'], 'exist', 'targetClass' => ArticleCategory::class, 'targetAttribute' => 'id'],
             [['status'], 'integer'],
-            [['thumbnail_base_url', 'thumbnail_path'], 'string', 'max' => 1024],
+            [['thumbnail_base_url', 'thumbnail_path', 'source_link'], 'string', 'max' => 1024],
             [['title'], 'string', 'max' => 512],
             [['view', 'slug'], 'string', 'max' => 255],
-            [['attachments', 'thumbnail','tags_array'], 'safe'],
+            [['attachments', 'thumbnail','tags_array','source_link'], 'safe'],
         ];
     }
 
@@ -161,6 +162,7 @@ class Article extends ActiveRecord
             'created_at' => 'Создано',
             'updated_at' => 'Обновлено',
             'tags_array' => 'Теги',
+            'source_link' => 'Ссылка на источник',
 
         ];
     }

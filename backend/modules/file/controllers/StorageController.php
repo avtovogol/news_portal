@@ -49,6 +49,15 @@ class StorageController extends Controller
             ],
             'upload-imperavi' => [
                 'class' => UploadAction::class,
+                'on afterSave' => function ($event) {
+                    /* @var $file \League\Flysystem\File */
+                    $file = $event->file;
+                    $img = ImageManagerStatic::make($file->read())->resize(700,null,function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    });
+                    $file->put($img->encode());
+                },
                 'fileparam' => 'file',
                 'responseUrlParam' => 'filelink',
                 'multiple' => false,

@@ -71,7 +71,7 @@ class ArticleController extends Controller
      */
     public function actionUpdate($id)
     {
-        $test = Yii::$app->user->identity->userProfile;
+
         $article = $this->findModel($id);
 
         $this->performAjaxValidation($article);
@@ -82,7 +82,6 @@ class ArticleController extends Controller
         return $this->render('update', [
             'model' => $article,
             'categories' => ArticleCategory::find()->active()->all(),
-            'test'=>$test,
         ]);
     }
 

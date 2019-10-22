@@ -88,6 +88,8 @@ use kartik\select2\Select2;
     ],
 ])?>
 
+<?php echo $form->field($model, 'source_link')->textInput(['maxlength' => true]) ?>
+
 <div class="form-group">
     <?php echo Html::submitButton(
         $model->isNewRecord ? 'Создать' : 'Редактировать',

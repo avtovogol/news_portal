@@ -1,10 +1,13 @@
 <?php
 /* @var $this yii\web\View */
+
 /* @var $model common\models\Article */
+
 use yii\helpers\Html;
 
 $this->title = $model->title;
 ?>
+
 <div class="container-fluid bg-faded fh5co_padd_mediya padding_786">
     <div class="container padding_786">
         <nav class="navbar navbar-toggleable-md navbar-light ">
@@ -21,39 +24,30 @@ $this->title = $model->title;
                         <a class="nav-link" href="/article">Новости <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="/article/treta-stata">Статья <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/article/treta-stata">Статья <span
+                                    class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">Категории <span class="sr-only">(current)</span></a>
+                           aria-haspopup="true" aria-expanded="false">Категории <span
+                                    class="sr-only">(current)</span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
                             <?php foreach ($categories as $category) {
-                                echo \yii\helpers\Html::a($category->title, ['/article/index', 'ArticleSearch[category_id]' => $category->id],['class'=>'dropdown-item']);
-                            }?>
+                                echo \yii\helpers\Html::a($category->title, ['/article/index', 'ArticleSearch[category_id]' => $category->id], ['class' => 'dropdown-item']);
+                            } ?>
                         </div>
-                        <!--                        </li>-->
-                        <!--                        <li class="nav-item dropdown">-->
-                        <!--                            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton3" data-toggle="dropdown"-->
-                        <!--                               aria-haspopup="true" aria-expanded="false">Community<span class="sr-only">(current)</span></a>-->
-                        <!--                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">-->
-                        <!--                                <a class="dropdown-item" href="#">Action in</a>-->
-                        <!--                                <a class="dropdown-item" href="#">Another action</a>-->
-                        <!--                                <a class="dropdown-item" href="#">Something else here</a>-->
-                        <!--                            </div>-->
-                        <!--                        </li>-->
-                        <!--                        <li class="nav-item ">-->
-                        <!--                            <a class="nav-link" href="Contact_us.html">Contact <span class="sr-only">(current)</span></a>-->
-                        <!--                        </li>-->
                 </ul>
             </div>
         </nav>
     </div>
 </div>
-<div id="fh5co-title-box" style="background-image: url(<?php echo str_replace("\\","/",$model->thumbnail_base_url.$model->thumbnail_path);?>); background-position: 50% 90.5px;" data-stellar-background-ratio="0.5">
+<div id="fh5co-title-box"
+     style="background-image: url(<?php echo str_replace("\\", "/", $model->thumbnail_base_url . $model->thumbnail_path); ?>); background-position: 50% 90.5px;"
+     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="page-title">
-        <?php echo Html::img($model->author->userProfile->avatar_base_url.$model->author->userProfile->avatar_path, ['alt' =>"Free HTML5 by FreeHTMl5.co"]);?><!--<img src="/images/person_1.jpg" alt="Free HTML5 by FreeHTMl5.co">-->
-        <span> <?php echo Yii::$app->formatter->asDatetime($model->created_at) ?></span>
+        <?php echo Html::img($model->author->userProfile->avatar_base_url . $model->author->userProfile->avatar_path, ['alt' => "Free HTML5 by FreeHTMl5.co"]); ?>
+        <span> <?php echo Yii::$app->formatter->asDate($model->created_at, 'long') ?></span>
         <h2><?= $model->title ?></h2>
     </div>
 </div>
@@ -61,17 +55,24 @@ $this->title = $model->title;
     <div class="container paddding">
         <div class="row mx-0">
             <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
-                <?= $model->body?>
+                <?= $model->body ?>
+                <p>
+                    <?php echo '<br>' . (($model->tags) ? '<i class="fa fa-tags" aria-hidden="true"></i> ' : '');
+                    foreach ($model->tags as $tag) {
+                        echo Html::a($tag->name, ['/article/index', 'ArticleSearch[tags]' => $tag->id]) . ', ';
+                    }; ?>
+                </p>
             </div>
+
             <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Теги</div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="fh5co_tags_all">
-                    <?php  foreach($tags as $tag) {
-                        echo Html::a($tag->name, "#",['class'=>'fh5co_tagg']);
-                    }?>
+                    <?php foreach ($tags as $tag) {
+                        echo Html::a($tag->name, ['/article/index', 'ArticleSearch[tags]' => $tag->id], ['class' => 'fh5co_tagg']);
+                    } ?>
                 </div>
                 <div>
                     <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Популярное</div>

@@ -34,7 +34,6 @@ class ArticleController extends Controller
             'dataProvider' => $dataProvider,
             'tags' => $tags,
             'categories' => $categories,
-
         ]);
     }
 
